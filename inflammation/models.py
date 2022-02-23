@@ -32,6 +32,7 @@ def daily_min(data):
     """Calculate the daily min of a 2d inflammation data array."""
     return np.min(data, axis=0)
 
+
 def daily_sd(data):
     """Calculate the daily min of a 2d inflammation data array."""
     return np.std(data, axis=0)
@@ -68,6 +69,7 @@ class Observation:
     def __str__(self):
         return str(self.value)
 
+
 class Person:
     def __init__(self, name):
         self.name = name
@@ -78,6 +80,7 @@ class Person:
 
 class Patient(Person):
     """A patient in an inflammation study."""
+
     def __init__(self, name, observations=None):
         super().__init__(name)
 
@@ -103,9 +106,9 @@ class Patient(Person):
         return self.observations[-1]
 
 
-
 class Doctor(Person):
     """A doctor in an inflammation study."""
+
     def __init__(self, name):
         super().__init__(name)
         self.patients = []
@@ -117,6 +120,7 @@ class Doctor(Person):
             if patient.name == new_patient.name:
                 return
         self.patients.append(new_patient)
+
 
 doc = Doctor("Dr.Alice")
 print(doc)
