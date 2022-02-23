@@ -32,6 +32,10 @@ def daily_min(data):
     """Calculate the daily min of a 2d inflammation data array."""
     return np.min(data, axis=0)
 
+def daily_sd(data):
+    """Calculate the daily min of a 2d inflammation data array."""
+    return np.std(data, axis=0)
+
 
 def patient_normalise(data):
     """
