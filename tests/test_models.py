@@ -34,6 +34,18 @@ import pytest
     "test, expected",
     [
         ([[0, 0], [0, 0], [0, 0]], [0, 0]),
+        ([[1, 15], [3, 7], [5, 100]], [1.6329932, 42.081931]),
+    ])
+def test_daily_sd(test, expected):
+    """Test mean function works for array of zeroes and positive integers."""
+    from inflammation.models import daily_sd
+    npt.assert_almost_equal(daily_sd(np.array(test)), np.array(expected), decimal=4)
+
+
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([[0, 0], [0, 0], [0, 0]], [0, 0]),
         ([[1, 2], [3, 4], [5, 6]], [3, 4]),
     ])
 def test_daily_mean(test, expected):
